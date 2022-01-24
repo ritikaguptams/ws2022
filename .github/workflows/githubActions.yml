@@ -36,3 +36,16 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+          
+  test2:
+    # The type of runner that the job will run on
+    runs-on: self-hosted
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      -
+        name: Checkout 
+        uses: actions/checkout@v2
+      -
+        run: |
+          docker run --name ws2022 -d mcr.microsoft.com/windows/servercore:ltsc2022
